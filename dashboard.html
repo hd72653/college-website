@@ -1,0 +1,748 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Student Dashboard</title>
+    <meta name="description" content="Student Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    
+    <style>
+        .dashboard-container {
+            padding: 30px 0;
+        }
+        .dashboard-header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .welcome-box {
+            background: linear-gradient(to right, #3c8dbc, #00c0ef);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .stats-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .stats-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .stats-box h4 {
+            margin-top: 0;
+            color: #3c8dbc;
+        }
+        .stats-box .icon {
+            font-size: 40px;
+            color: #3c8dbc;
+            margin-bottom: 10px;
+        }
+        .course-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .course-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .course-box .progress {
+            height: 10px;
+            margin-top: 10px;
+        }
+        .announcement-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .announcement-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .announcement-item:last-child {
+            border-bottom: none;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+        .badge-course {
+            background-color: #3c8dbc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 5px;
+        }
+        .calendar-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="header_top_wrap d-flex justify-content-between align-items-center">
+                                <div class="text_wrap">
+                                    <p><span>+919342584473</span> <span>hd726534@gmail.com</span></p>
+                                </div>
+                                <div class="text_wrap">
+                                    <p><span id="studentName"></span> <a href="index.html" id="logoutBtn">Logout</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="header_wrap d-flex justify-content-between align-items-center">
+                                <div class="header_left">
+                                    <div class="logo">
+                                        <a href="index.html">
+                                            <img src="img/logo1.png" alt="" width="170px">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="header_right d-flex align-items-center">
+                                    <div class="main-menu  d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="Courses.html">Courses</a></li>
+                                                <li><a class="active" href="dashboard.html">My Dashboard</a></li>
+                                                <li><a href="#">Academic <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="#">Assignments</a></li>
+                                                        <li><a href="#">Exams</a></li>
+                                                        <li><a href="#">Grades</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="Appointment">
+                                        <div class="book_btn d-none d-lg-block">
+                                            <a href="index.html">Back to Home</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- Dashboard content start -->
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="welcome-box">
+                            <h2>Welcome, <span id="welcomeUsername">Student</span>!</h2>
+                            <p>Your student dashboard gives you access to all your courses, assignments, and academic information.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img id="profileImage" src="" alt="Profile" class="profile-img">
+                        <h4 class="mt-3" id="profileUsername">Student Name</h4>
+                        <p>Student ID: <span id="studentIdNumber">STU12345</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stats-box text-center">
+                        <div class="icon">
+                            <i class="flaticon-book"></i>
+                        </div>
+                        <h4>Courses</h4>
+                        <h2 id="coursesCount">4</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-box text-center">
+                        <div class="icon">
+                            <i class="flaticon-calendar"></i>
+                        </div>
+                        <h4>Assignments</h4>
+                        <h2 id="assignmentsCount">7</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-box text-center">
+                        <div class="icon">
+                            <i class="flaticon-clock"></i>
+                        </div>
+                        <h4>Hours Studied</h4>
+                        <h2 id="hoursStudied">32</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-box text-center">
+                        <div class="icon">
+                            <i class="flaticon-placeholder"></i>
+                        </div>
+                        <h4>Attendance</h4>
+                        <h2 id="attendancePercentage">92%</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <h3>My Courses</h3>
+                    <div id="coursesList">
+                        <!-- Course items will be generated dynamically -->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Announcements</h3>
+                    <div class="announcement-box" id="announcementsList">
+                        <!-- Announcements will be generated dynamically -->
+                    </div>
+
+                    <h3 class="mt-4">Upcoming Deadlines</h3>
+                    <div class="calendar-box">
+                        <div class="list-group" id="deadlinesList">
+                            <!-- Deadlines will be generated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard content end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                About Us
+                            </h3>
+                            <ul>
+                                <li><a href="#">Online Learning</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Press Center</a></li>
+                                <li><a href="#">Become an Instructor</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Campus
+                            </h3>
+                            <ul>
+                                <li><a href="#">Our Plans</a></li>
+                                <li><a href="#">Free Trial</a></li>
+                                <li><a href="#">Academic Solutions</a></li>
+                                <li><a href="#">Business Solutions</a></li>
+                                <li><a href="#">Government Solutions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Study
+                            </h3>
+                            <ul>
+                                <li><a href="#">Admissions Policy</a></li>
+                                <li><a href="#">Getting Started</a></li>
+                                <li><a href="#">Visa Information</a></li>
+                                <li><a href="#">Tuition Calculator</a></li>
+                                <li><a href="#">Request Information</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Support
+                            </h3>
+                            <ul>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">System Requirements</a></li>
+                                <li><a href="#">Register Activation Key</a></li>
+                                <li><a href="#">Site feedback</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <p>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="mailto:hd726534@gmail.com" target="_blank">HariDass</a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end  -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <script>
+        // Database of profile pictures
+        const profileImages = [
+            "https://randomuser.me/api/portraits/men/1.jpg",
+            "https://randomuser.me/api/portraits/women/1.jpg",
+            "https://randomuser.me/api/portraits/men/2.jpg",
+            "https://randomuser.me/api/portraits/women/2.jpg",
+            "https://randomuser.me/api/portraits/men/3.jpg",
+            "https://randomuser.me/api/portraits/women/3.jpg",
+            "https://randomuser.me/api/portraits/men/4.jpg",
+            "https://randomuser.me/api/portraits/women/4.jpg",
+            "https://randomuser.me/api/portraits/men/5.jpg",
+            "https://randomuser.me/api/portraits/women/5.jpg"
+        ];
+
+        // Course database
+        const allCourses = [
+            { 
+                id: "CS101", 
+                title: "Introduction to Programming", 
+                professor: "Prof. John Smith", 
+                status: "In Progress" 
+            },
+            { 
+                id: "CS202", 
+                title: "Data Structures", 
+                professor: "Prof. Jane Doe", 
+                status: "In Progress" 
+            },
+            { 
+                id: "CS303", 
+                title: "Database Management", 
+                professor: "Prof. Robert Johnson", 
+                status: "In Progress" 
+            },
+            { 
+                id: "CS404", 
+                title: "Machine Learning Basics", 
+                professor: "Prof. Sarah Williams", 
+                status: "In Progress" 
+            },
+            { 
+                id: "MATH201", 
+                title: "Linear Algebra", 
+                professor: "Prof. Alan Murphy", 
+                status: "In Progress" 
+            },
+            { 
+                id: "PHYS101", 
+                title: "Physics for Computer Science", 
+                professor: "Prof. Lisa Chen", 
+                status: "In Progress" 
+            },
+            { 
+                id: "ENG205", 
+                title: "Technical Writing", 
+                professor: "Prof. Michael Brown", 
+                status: "In Progress" 
+            },
+            { 
+                id: "CS405", 
+                title: "Artificial Intelligence", 
+                professor: "Prof. David Lee", 
+                status: "In Progress" 
+            },
+            { 
+                id: "CS310", 
+                title: "Web Development", 
+                professor: "Prof. Emma Wilson", 
+                status: "In Progress" 
+            },
+            { 
+                id: "CS330", 
+                title: "Mobile App Development", 
+                professor: "Prof. Kevin Garcia", 
+                status: "In Progress" 
+            }
+        ];
+
+        // Announcements database
+        const allAnnouncements = [
+            {
+                title: "Exam Schedule Updated",
+                content: "The final exam schedule has been updated. Please check your email for details.",
+                date: "March 15, 2025"
+            },
+            {
+                title: "New Assignment",
+                content: "New assignment for CS101 has been posted. Due date: March 25, 2025.",
+                date: "March 12, 2025"
+            },
+            {
+                title: "Campus Event",
+                content: "Join us for the annual tech fest on March 30, 2025.",
+                date: "March 10, 2025"
+            },
+            {
+                title: "Guest Lecture Announcement",
+                content: "Dr. Emily Jackson from Google will deliver a special lecture on AI Ethics on March 22, 2025.",
+                date: "March 14, 2025"
+            },
+            {
+                title: "Library Hours Extended",
+                content: "The university library will now be open until midnight during the exam period.",
+                date: "March 8, 2025"
+            },
+            {
+                title: "Scholarship Opportunity",
+                content: "Applications for the Tech Leaders Scholarship are now open. Deadline: April 5, 2025.",
+                date: "March 17, 2025"
+            },
+            {
+                title: "System Maintenance",
+                content: "The student portal will be under maintenance from 2 AM to 5 AM on March 20, 2025.",
+                date: "March 16, 2025"
+            }
+        ];
+
+        // Deadlines database
+        const allDeadlines = [
+            {
+                title: "Database Project",
+                course: "CS303",
+                dueDate: "March 22, 2025",
+                daysLeft: 3
+            },
+            {
+                title: "Programming Assignment",
+                course: "CS101",
+                dueDate: "March 24, 2025",
+                daysLeft: 5
+            },
+            {
+                title: "ML Quiz",
+                course: "CS404",
+                dueDate: "March 26, 2025",
+                daysLeft: 7
+            },
+            {
+                title: "Research Paper",
+                course: "ENG205",
+                dueDate: "March 28, 2025",
+                daysLeft: 9
+            },
+            {
+                title: "Group Presentation",
+                course: "CS310",
+                dueDate: "March 23, 2025",
+                daysLeft: 4
+            },
+            {
+                title: "Lab Report",
+                course: "PHYS101",
+                dueDate: "March 27, 2025",
+                daysLeft: 8
+            },
+            {
+                title: "Midterm Exam",
+                course: "MATH201",
+                dueDate: "March 21, 2025",
+                daysLeft: 2
+            }
+        ];
+
+        // Function to generate a random integer between min and max (inclusive)
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to get random items from an array
+        function getRandomItems(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        // Function to generate a random student ID based on username
+        function generateStudentID(username) {
+            const firstLetter = username.charAt(0).toUpperCase();
+            const randomID = Math.floor(10000 + Math.random() * 90000);
+            return firstLetter + randomID;
+        }
+
+        // Function to generate a hash value from a string
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash; // Convert to 32bit integer
+            }
+            return Math.abs(hash);
+        }
+
+        // Function to generate user-specific randomized data based on username
+        function generateUserData(username) {
+            // Use the username to generate a deterministic seed for randomization
+            const seed = hashString(username);
+            
+            // Use the seed to generate pseudo-random but consistent data for each user
+            const rng = (min, max) => {
+                const x = Math.sin(seed + 1) * 10000;
+                return Math.floor((x - Math.floor(x)) * (max - min + 1)) + min;
+            };
+            
+            // Select random profile image (consistent for the same username)
+            const profileImageIndex = rng(0, profileImages.length - 1);
+            
+            // Generate stats
+            const coursesCount = rng(3, 6);
+            const assignmentsCount = rng(5, 15);
+            const hoursStudied = rng(15, 60);
+            const attendancePercentage = rng(75, 100);
+            
+            // Generate courses (consistent for the same username)
+            const userCourses = [];
+            const shuffledCourses = [...allCourses].sort(() => rng(0, 100)/100 - 0.5);
+            for (let i = 0; i < coursesCount; i++) {
+                if (i < shuffledCourses.length) {
+                    const progress = rng(10, 95);
+                    userCourses.push({
+                        ...shuffledCourses[i],
+                        progress: progress
+                    });
+                }
+            }
+            
+            // Select random announcements (3-5)
+            const announcementCount = rng(3, 5);
+            const shuffledAnnouncements = [...allAnnouncements].sort(() => rng(0, 100)/100 - 0.5);
+            const userAnnouncements = shuffledAnnouncements.slice(0, announcementCount);
+            
+            // Select random deadlines (2-4)
+            const deadlineCount = rng(2, 4);
+            const userDeadlines = [];
+            
+            // Ensure deadlines match user's courses
+            for (let i = 0; i < deadlineCount && i < allDeadlines.length; i++) {
+                const deadlineIndex = rng(0, allDeadlines.length - 1);
+                const deadline = {...allDeadlines[deadlineIndex]};
+                
+                // Try to match a deadline with one of the user's courses
+                const matchingCourse = userCourses.find(course => course.id === deadline.course);
+                if (matchingCourse) {
+                    deadline.course = matchingCourse.id;
+                } else {
+                    // If no matching course, use one of the user's random courses
+                    const randomCourseIndex = rng(0, userCourses.length - 1);
+                    deadline.course = userCourses[randomCourseIndex].id;
+                }
+                
+                userDeadlines.push(deadline);
+            }
+            
+            return {
+                profileImage: profileImages[profileImageIndex],
+                studentId: generateStudentID(username),
+                stats: {
+                    coursesCount,
+                    assignmentsCount,
+                    hoursStudied, 
+                    attendancePercentage
+                },
+                courses: userCourses,
+                announcements: userAnnouncements,
+                deadlines: userDeadlines
+            };
+        }
+
+        // Function to render the user data to the dashboard
+        function renderDashboard(userData) {
+            // Set profile information
+            document.getElementById("profileImage").src = userData.profileImage;
+            document.getElementById("studentIdNumber").textContent = userData.studentId;
+            
+            // Set stats
+            document.getElementById("coursesCount").textContent = userData.stats.coursesCount;
+            document.getElementById("assignmentsCount").textContent = userData.stats.assignmentsCount;
+            document.getElementById("hoursStudied").textContent = userData.stats.hoursStudied;
+            document.getElementById("attendancePercentage").textContent = userData.stats.attendancePercentage + "%";
+            
+            // Render courses
+            const coursesList = document.getElementById("coursesList");
+            coursesList.innerHTML = "";
+            
+            userData.courses.forEach(course => {
+                const courseElement = document.createElement("div");
+                courseElement.className = "course-box";
+                courseElement.innerHTML = `
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>${course.title}</h4>
+                            <p>${course.id} - ${course.professor}</p>
+                            <span class="badge badge-course">${course.status}</span>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <p>Progress: ${course.progress}%</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: ${course.progress}%" 
+                                     aria-valuenow="${course.progress}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                coursesList.appendChild(courseElement);
+            });
+            
+            // Render announcements
+            const announcementsList = document.getElementById("announcementsList");
+            announcementsList.innerHTML = "";
+            
+            userData.announcements.forEach(announcement => {
+                const announcementElement = document.createElement("div");
+                announcementElement.className = "announcement-item";
+                announcementElement.innerHTML = `
+                    <h5>${announcement.title}</h5>
+                    <p>${announcement.content}</p>
+                    <small>Posted on ${announcement.date}</small>
+                `;
+                announcementsList.appendChild(announcementElement);
+            });
+            
+            // Render deadlines
+            const deadlinesList = document.getElementById("deadlinesList");
+            deadlinesList.innerHTML = "";
+            
+            userData.deadlines.forEach(deadline => {
+                const deadlineElement = document.createElement("a");
+                deadlineElement.className = "list-group-item list-group-item-action";
+                deadlineElement.href = "#";
+                deadlineElement.innerHTML = `
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">${deadline.title}</h5>
+                        <small>${deadline.daysLeft} days left</small>
+                    </div>
+                    <p class="mb-1">${deadline.course} - Due: ${deadline.dueDate}</p>
+                `;
+                deadlinesList.appendChild(deadlineElement);
+            });
+        }
+
+        // Initialize dashboard when DOM content is loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = sessionStorage.getItem("username");
+            
+            if (username) {
+                // Display the username in the header
+                document.getElementById("studentName").textContent = "Welcome, " + username;
+                
+                // Display the username in the welcome box
+                document.getElementById("welcomeUsername").textContent = username;
+                
+                // Display the username in the profile section
+                document.getElementById("profileUsername").textContent = username;
+                
+                // Generate and render user-specific data
+                const userData = generateUserData(username);
+                renderDashboard(userData);
+                
+                // Store user data in sessionStorage for persistence
+                sessionStorage.setItem("userData", JSON.stringify(userData));
+                
+            } else {
+                // Redirect to login if username is not found
+                window.location.href = "index.html";
+                alert("Please login to access your dashboard");
+            }
+            
+            // Add click event for logout button
+            document.getElementById("logoutBtn").addEventListener("click", function() {
+                sessionStorage.removeItem("username");
+                sessionStorage.removeItem("userData"); // Clear user data on logout
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+</body>
+
+</html>
